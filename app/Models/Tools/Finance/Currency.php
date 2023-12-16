@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Models\Tools\Finance;
 
 use App\Models\CRM\Client;
+use App\Models\Finance\Payment\Payment;
 use App\Models\Tools\CRM\Country;
 use App\Traits\GetModelByKeyName;
 use App\Traits\UuidGenerator;
@@ -47,6 +48,11 @@ class Currency extends Model
     public function clients()
     {
         return $this->hasMany(Client::class);
+    }
+
+    public function payments()
+    {
+        return $this->hasManyThrough(Payment::class, Client::class);
     }
 
     // Helper Methods
