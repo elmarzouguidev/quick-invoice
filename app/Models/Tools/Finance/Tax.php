@@ -6,6 +6,7 @@ namespace App\Models\Tools\Finance;
 
 use App\Models\CRM\Client;
 use App\Models\Finance\Item\Item;
+use App\Models\Tools\CRM\Country;
 use App\Traits\GetModelByKeyName;
 use App\Traits\UuidGenerator;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -41,6 +42,11 @@ class Tax extends Model
 
     // Relationships
 
+
+    public function country()
+    {
+        return $this->belongsTo(Country::class);
+    }
 
     public function clients()
     {

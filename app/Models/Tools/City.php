@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace App\Models\Tools;
 
+use App\Models\CRM\Client;
+use App\Models\Tools\CRM\Country;
 use App\Traits\GetModelByKeyName;
 use App\Traits\UuidGenerator;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -36,5 +38,15 @@ class City extends Model
 
     // Relationships
 
+
+    public function country()
+    {
+        return $this->belongsTo(Country::class);
+    }
+
+    public function clients()
+    {
+        return $this->hasMany(Client::class);
+    }
     // Helper Methods
 }

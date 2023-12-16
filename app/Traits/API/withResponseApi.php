@@ -11,6 +11,6 @@ trait withResponseApi
 {
     public function withResponse(Request $request, JsonResponse $response)
     {
-        $response->header('X-Fixall', 'FixAll');
+        $response->header('X-QuickInvoice', 'QuickInvoice');
     }
 }

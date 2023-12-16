@@ -7,6 +7,7 @@ namespace App\Models\Finance\Sell;
 use App\Models\CRM\Client;
 use App\Models\Finance\Document\Document;
 use App\Models\Finance\Item\Item;
+use App\Models\Finance\Payment\PaymentItem;
 use App\Models\Finance\Price\Price;
 use App\Traits\GetModelByKeyName;
 use App\Traits\UuidGenerator;
@@ -49,7 +50,6 @@ class Invoice extends Model
         return $this->belongsTo(Client::class);
     }
 
-    
     public function prices(): MorphMany
     {
         return $this->morphMany(Price::class, 'priceable');
@@ -63,6 +63,11 @@ class Invoice extends Model
     public function items(): MorphMany
     {
         return $this->morphMany(Item::class, 'itemable')->orderBy('position');
+    }
+
+    public function payments()
+    {
+        return $this->hasMany(PaymentItem::class);
     }
 
     // Helper Methods

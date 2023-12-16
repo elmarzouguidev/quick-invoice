@@ -15,6 +15,8 @@ class CountrySeeder extends Seeder
     {
         $countries = [
             ['name' => 'MAROC'],
+            ['name' => 'Europe'],
+            ['name' => 'États-Unis'],
         ];
 
         foreach ($countries as $country) {

@@ -21,6 +21,7 @@ class CurrencySeeder extends Seeder
                 'precision' => '2',
                 'thousand_separator' => ',',
                 'decimal_separator' => '.',
+                'country_id' => 1
             ],
             [
                 'name' => 'Euro',
@@ -30,6 +31,8 @@ class CurrencySeeder extends Seeder
                 'thousand_separator' => '.',
                 'decimal_separator' => ',',
                 'swap_currency_symbol' => true,
+                'country_id' => 2
+
             ],
             [
                 'name' => 'US Dollar',
@@ -38,6 +41,7 @@ class CurrencySeeder extends Seeder
                 'precision' => '2',
                 'thousand_separator' => ',',
                 'decimal_separator' => '.',
+                'country_id' => 3
             ],
         ];
 

@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Models\Finance\Payment;
 
+use App\Models\Finance\Sell\Invoice;
 use App\Traits\GetModelByKeyName;
 use App\Traits\UuidGenerator;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -36,6 +37,11 @@ class PaymentItem extends Model
 
     // Relationships
 
+
+    public function invoice()
+    {
+        return $this->belongsTo(Invoice::class);
+    }
 
     public function payment()
     {
