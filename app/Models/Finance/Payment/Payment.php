@@ -2,16 +2,14 @@
 
 declare(strict_types=1);
 
-namespace App\Models\Tools\Finance;
+namespace App\Models\Finance\Payment;
 
-use App\Models\CRM\Client;
-use App\Models\Finance\Item\Item;
 use App\Traits\GetModelByKeyName;
 use App\Traits\UuidGenerator;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Tax extends Model
+class Payment extends Model
 {
     use HasFactory;
     use UuidGenerator;
@@ -23,9 +21,6 @@ class Tax extends Model
      */
     protected $fillable = [
         'uuid',
-        'country_id',
-        'name',
-        'symbole',
 
         'is_active',
         'is_valide'
@@ -41,15 +36,10 @@ class Tax extends Model
 
     // Relationships
 
-
-    public function clients()
-    {
-        return $this->hasMany(Client::class);
-    }
-
     public function items()
     {
-        return $this->hasMany(Item::class);
+        return $this->hasMany(PaymentItem::class);
     }
+
     // Helper Methods
 }

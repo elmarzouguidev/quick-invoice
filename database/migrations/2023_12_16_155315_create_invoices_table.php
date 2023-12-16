@@ -16,6 +16,9 @@ return new class extends Migration
     {
         Schema::create('invoices', function (Blueprint $table) {
 
+            $table->id();
+            $table->uuid()->nullable()->unique();
+
             $table->foreignIdFor(Currency::class)->index()->nullable()->constrained()->nullOnDelete();
             $table->foreignIdFor(Client::class)->index()->nullable()->constrained()->nullOnDelete();
 
@@ -23,27 +26,18 @@ return new class extends Migration
 
             $table->unsignedInteger('status')->default(DocumentStatuses::DRAFT->value);
 
-            $table->string('bl_code', 200)->nullable();
-            $table->string('bc_code', 200)->nullable();
-
-            $table->decimal('price_ht', 13, 2)->default(0)->nullable();
-            $table->decimal('price_total', 13, 2)->default(0)->nullable();
-            $table->decimal('price_tax', 13, 2)->default(0)->nullable();
-            $table->decimal('price_remise', 13, 2)->default(0)->nullable();
-            $table->decimal('price_due', 13, 2)->default(0)->nullable();
-
             $table->date('document_date')->nullable();
             $table->date('due_date')->nullable();
             $table->date('payment_date')->nullable();
 
-            $table->boolean('has_avoir')->default(false);
             $table->boolean('is_send')->default(false);
-            $table->boolean('is_paid')->default(false);
             $table->boolean('is_valid')->default(false);
             $table->boolean('is_active')->default(true);
 
-            $table->mediumText('admin_notes')->nullable();
-            $table->mediumText('condition_general')->nullable();
+            $table->mediumText('notes')->nullable();
+            $table->mediumText('conditions')->nullable();
+
+            $table->timestamps();
         });
     }
 

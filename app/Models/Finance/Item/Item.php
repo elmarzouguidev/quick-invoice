@@ -2,17 +2,16 @@
 
 declare(strict_types=1);
 
-namespace App\Models\CRM;
+namespace App\Models\Finance\Item;
 
-use App\Models\Finance\Sell\Etstimate;
-use App\Models\Finance\Sell\Invoice;
 use App\Models\Tools\Finance\Tax;
 use App\Traits\GetModelByKeyName;
 use App\Traits\UuidGenerator;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\MorphTo;
 
-class Client extends Model
+class Item extends Model
 {
     use HasFactory;
     use UuidGenerator;
@@ -24,8 +23,15 @@ class Client extends Model
      */
     protected $fillable = [
         'uuid',
-
-        'is_active',
+        'designation',
+        'description',
+        'quantity',
+        'price_unit',
+        'price_ht',
+        'price_remise',
+        'price_tax',
+        'price_ttc',
+        'options',
         'is_valide'
     ];
 
@@ -33,26 +39,20 @@ class Client extends Model
      * @var string[]|array<int,string>
      */
     protected $casts = [
-        'is_active' => 'boolean',
-        'is_valide' => 'boolean',
+        'quantity' => 'float',
+        'position' => 'integer',
+        'options' => 'array'
     ];
 
     // Relationships
-
+    public function itemable(): MorphTo
+    {
+        return $this->morphTo();
+    }
 
     public function tax()
     {
         return $this->belongsTo(Tax::class);
-    }
-
-    public function invoices()
-    {
-        return $this->hasMany(Invoice::class);
-    }
-
-    public function estimates()
-    {
-        return $this->hasMany(Etstimate::class);
     }
     // Helper Methods
 }
