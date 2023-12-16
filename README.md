@@ -6,7 +6,7 @@
 
 ## Introduction 
 
-QuickInvoice est la solution ultime pour les TPE, PME, start-ups et commerçants au Maroc. 
+QuickInvoice est la solution ultime pour les TPE, PME, start-ups et commerçants au Maroc. <br>
 Notre application de gestion d’entreprise tout-en-un vous permet de gérer facilement tous les aspects essentiels de votre activité, de la partie commerciale à la trésorerie, le tout avec un tableau de bord pour visualiser vos performances en un coup d’œil.
 
 
