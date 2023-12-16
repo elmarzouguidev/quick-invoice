@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Models\Finance\Payment;
 
 use App\Models\CRM\Client;
+use App\Models\Tools\Finance\PaymentMethod;
 use App\Traits\GetModelByKeyName;
 use App\Traits\UuidGenerator;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -36,6 +37,12 @@ class Payment extends Model
     ];
 
     // Relationships
+
+
+    public function paymentMathod()
+    {
+        return $this->belongsTo(PaymentMethod::class);
+    }
 
     public function client()
     {

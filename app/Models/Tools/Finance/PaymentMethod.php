@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Models\Tools\Finance;
 
+use App\Models\Finance\Payment\Payment;
 use App\Traits\GetModelByKeyName;
 use App\Traits\UuidGenerator;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -14,7 +15,7 @@ class PaymentMethod extends Model
     use HasFactory;
     use UuidGenerator;
     use GetModelByKeyName;
-    
+
 
     /**
      * @var string[]|array<int,string>
@@ -36,6 +37,11 @@ class PaymentMethod extends Model
     ];
 
     // Relationships
+
+    public function payments()
+    {
+        return $this->hasMany(Payment::class);
+    }
 
     // Helper Methods
 }
