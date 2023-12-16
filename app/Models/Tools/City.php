@@ -14,14 +14,14 @@ class City extends Model
     use HasFactory;
     use UuidGenerator;
     use GetModelByKeyName;
-    
+
 
     /**
      * @var string[]|array<int,string>
      */
     protected $fillable = [
         'uuid',
-
+        'country_id',
         'is_active',
         'is_valide'
     ];

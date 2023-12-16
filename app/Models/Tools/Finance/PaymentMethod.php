@@ -9,21 +9,18 @@ use App\Traits\UuidGenerator;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Tax extends Model
+class PaymentMethod extends Model
 {
     use HasFactory;
     use UuidGenerator;
     use GetModelByKeyName;
-
+    
 
     /**
      * @var string[]|array<int,string>
      */
     protected $fillable = [
         'uuid',
-        'country_id',
-        'name',
-        'symbole',
 
         'is_active',
         'is_valide'

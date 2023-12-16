@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Tools\CRM\Activity;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -12,6 +13,12 @@ class ActivitySeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        $types = [
+            ['name' => 'Hébergement Web'],
+        ];
+
+        foreach ($types as $type) {
+            Activity::create($type);
+        }
     }
 }
