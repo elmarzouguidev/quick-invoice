@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Models\CRM;
 
 use App\Models\Tools\Traits\hasAddresses;
+use App\Models\Traits\BelongsToComapny;
 use App\Traits\GetModelByKeyName;
 use App\Traits\UuidGenerator;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -16,6 +17,7 @@ class Supplier extends Model
     use HasFactory;
     use UuidGenerator;
     use hasAddresses;
+    use BelongsToComapny;
     /**
      * @var string[]|array<int,string>
      */
