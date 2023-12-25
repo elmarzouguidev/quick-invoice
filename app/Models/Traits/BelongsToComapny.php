@@ -7,7 +7,6 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 trait BelongsToComapny
 {
-
     public function company(): BelongsTo
     {
         return $this->belongsTo(Company::class);

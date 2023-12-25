@@ -13,11 +13,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Supplier extends Model
 {
+    use BelongsToComapny;
     use GetModelByKeyName;
+    use hasAddresses;
     use HasFactory;
     use UuidGenerator;
-    use hasAddresses;
-    use BelongsToComapny;
+
     /**
      * @var string[]|array<int,string>
      */

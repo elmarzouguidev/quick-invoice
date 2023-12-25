@@ -18,10 +18,10 @@ use Illuminate\Database\Eloquent\Relations\MorphMany;
 
 class Invoice extends Model
 {
+    use BelongsToComapny;
     use GetModelByKeyName;
     use HasFactory;
     use UuidGenerator;
-    use BelongsToComapny;
 
     /**
      * @var string[]|array<int,string>

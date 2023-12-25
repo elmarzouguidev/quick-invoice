@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace App\Models\CRM;
 
-use App\Models\Company\Company;
 use App\Models\Finance\Payment\Payment;
 use App\Models\Finance\Sell\Etstimate;
 use App\Models\Finance\Sell\Invoice;
@@ -23,11 +22,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Client extends Model
 {
+    use BelongsToComapny;
     use GetModelByKeyName;
+    use hasAddresses;
     use HasFactory;
     use UuidGenerator;
-    use hasAddresses;
-    use BelongsToComapny;
 
     /**
      * @var string[]|array<int,string>

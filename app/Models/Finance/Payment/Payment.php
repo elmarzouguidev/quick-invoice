@@ -14,10 +14,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Payment extends Model
 {
+    use BelongsToComapny;
     use GetModelByKeyName;
     use HasFactory;
     use UuidGenerator;
-    use BelongsToComapny;
 
     /**
      * @var string[]|array<int,string>

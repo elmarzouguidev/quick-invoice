@@ -1,5 +1,6 @@
 <?php
 
+use App\Enums\Company\CompanyType;
 use App\Models\User;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -13,11 +14,14 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('companies', function (Blueprint $table) {
+
             $table->id();
             $table->uuid()->nullable()->unique();
 
             $table->foreignIdFor(User::class)->index()->nullable()->constrained();
             $table->uuid('user_uuid')->nullable();
+
+            $table->enum('type', array_column(CompanyType::cases(), 'value'));
 
             $table->string('code', 15)->unique()->nullable();
             $table->string('name', 200);

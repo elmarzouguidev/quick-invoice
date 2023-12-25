@@ -24,8 +24,8 @@ return new class extends Migration
 
             $table->string('country', 100)->nullable();
             $table->string('postal', 70)->nullable();
-            
-            $table->enum('type', array_column(AddressType::cases(), 'value'))->nullable();
+
+            $table->enum('type', array_column(AddressType::cases(), 'value'));
 
             $table->boolean('is_active')->default(true);
             $table->boolean('is_valid')->default(true);

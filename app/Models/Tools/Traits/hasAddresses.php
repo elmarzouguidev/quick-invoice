@@ -9,7 +9,6 @@ use Illuminate\Database\Eloquent\Relations\MorphOne;
 
 trait hasAddresses
 {
-
     public function addresses(): MorphMany
     {
         return $this->morphMany(Address::class, 'addressable');

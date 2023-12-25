@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Models\Company;
 
+use App\Enums\Company\CompanyType;
 use App\Models\CRM\Client;
 use App\Models\CRM\Supplier;
 use App\Models\Finance\Payment\Payment;
@@ -34,6 +35,7 @@ class Company extends Model
     protected $casts = [
         'is_active' => 'boolean',
         'is_valide' => 'boolean',
+        'type' => CompanyType::class,
     ];
 
     // Relationships

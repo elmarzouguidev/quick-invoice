@@ -21,10 +21,10 @@ return new class extends Migration
             $table->uuid()->nullable()->unique();
 
             $table->foreignIdFor(Company::class)
-            ->index()
-            ->nullable()
-            ->constrained()
-            ->cascadeOnDelete();
+                ->index()
+                ->nullable()
+                ->constrained()
+                ->cascadeOnDelete();
 
             $table->foreignIdFor(PaymentMethod::class)
                 ->index()

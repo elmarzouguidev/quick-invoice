@@ -13,10 +13,9 @@ use Illuminate\Database\Eloquent\Relations\MorphTo;
 
 class Address extends Model
 {
+    use GetModelByKeyName;
     use HasFactory;
     use UuidGenerator;
-    use GetModelByKeyName;
-
 
     /**
      * @var string[]|array<int,string>
@@ -25,7 +24,7 @@ class Address extends Model
         'uuid',
 
         'is_active',
-        'is_valide'
+        'is_valide',
     ];
 
     /**
@@ -34,7 +33,7 @@ class Address extends Model
     protected $casts = [
         'is_active' => 'boolean',
         'is_valide' => 'boolean',
-        'type' => AddressType::class
+        'type' => AddressType::class,
     ];
 
     // Relationships
