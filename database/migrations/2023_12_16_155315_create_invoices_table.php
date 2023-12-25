@@ -29,7 +29,7 @@ return new class extends Migration
             $table->foreignIdFor(Currency::class)->index()->nullable()->constrained()->nullOnDelete();
             $table->foreignIdFor(Client::class)->index()->nullable()->constrained()->nullOnDelete();
 
-            $table->string('document_number')->unique()->nullable();
+            $table->string('document_number')->nullable();
 
             $table->unsignedInteger('status')->default(DocumentStatuses::DRAFT->value);
 
