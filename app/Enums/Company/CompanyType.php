@@ -30,6 +30,7 @@ enum CompanyType: int
             self::SARL => 'SARL',
             self::SARLAU => 'SARL-AU ou EURL',
             self::AUTOENTREPRENEUR => 'Auto Entrepreneur',
+            self::ASSOCIATION => 'Association',
             self::SA => 'Société Anonyme (SA)',
             self::SCI => 'Société Civile Immobilière (SCI)',
         };
