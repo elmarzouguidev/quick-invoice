@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Models\Company;
 
 use App\Models\CRM\Client;
+use App\Models\CRM\Supplier;
 use App\Traits\GetModelByKeyName;
 use App\Traits\UuidGenerator;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -39,6 +40,21 @@ class Company extends Model
     public function clients()
     {
         return $this->hasMany(Client::class);
+    }
+
+    public function suppliers()
+    {
+        return $this->hasMany(Supplier::class);
+    }
+
+    public function invoices()
+    {
+        return $this->through('clients')->has('invoices');
+    }
+
+    public function estimates()
+    {
+        return $this->through('clients')->has('estimates');
     }
 
     // Helper Methods
