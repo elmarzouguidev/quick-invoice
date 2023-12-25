@@ -1,6 +1,5 @@
 <?php
 
-use App\Models\Tools\City;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -19,17 +18,12 @@ return new class extends Migration
 
             $table->morphs('addressable');
 
-            $table->foreignIdFor(City::class)
-                ->index()
-                ->nullable()
-                ->constrained()
-                ->nullOnDelete();
-
+            $table->string('city', 100)->nullable();
             $table->longText('address')->nullable();
 
             $table->string('country', 100)->nullable();
             $table->string('postal', 70)->nullable();
-            $table->enum('type', ['invoice', 'supplier'])->nullable();
+            $table->enum('type', ['invoice', 'supplier','normal'])->nullable();
 
             $table->boolean('is_active')->default(true);
             $table->boolean('is_valid')->default(true);
