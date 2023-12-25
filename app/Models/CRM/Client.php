@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace App\Models\CRM;
 
 use App\Models\Finance\Payment\Payment;
-use App\Models\Finance\Payment\PaymentItem;
 use App\Models\Finance\Sell\Etstimate;
 use App\Models\Finance\Sell\Invoice;
 use App\Models\Tools\City;
@@ -14,6 +13,7 @@ use App\Models\Tools\CRM\Country;
 use App\Models\Tools\CRM\Type;
 use App\Models\Tools\Finance\Currency;
 use App\Models\Tools\Finance\Tax;
+use App\Models\Tools\Traits\hasAddresses;
 use App\Traits\GetModelByKeyName;
 use App\Traits\UuidGenerator;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -24,6 +24,7 @@ class Client extends Model
     use GetModelByKeyName;
     use HasFactory;
     use UuidGenerator;
+    use hasAddresses;
 
     /**
      * @var string[]|array<int,string>
@@ -96,5 +97,6 @@ class Client extends Model
 
         return $this->through('payments')->has('items');
     }
+
     // Helper Methods
 }

@@ -1,5 +1,6 @@
 <?php
 
+use App\Enums\CRM\Addresse\AddressType;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -23,7 +24,8 @@ return new class extends Migration
 
             $table->string('country', 100)->nullable();
             $table->string('postal', 70)->nullable();
-            $table->enum('type', ['invoice', 'supplier','normal'])->nullable();
+            
+            $table->enum('type', array_column(AddressType::cases(), 'value'))->nullable();
 
             $table->boolean('is_active')->default(true);
             $table->boolean('is_valid')->default(true);
