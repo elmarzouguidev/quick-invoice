@@ -6,6 +6,7 @@ namespace App\Models\Finance\Payment;
 
 use App\Models\CRM\Client;
 use App\Models\Tools\Finance\PaymentMethod;
+use App\Models\Traits\BelongsToComapny;
 use App\Traits\GetModelByKeyName;
 use App\Traits\UuidGenerator;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -16,6 +17,7 @@ class Payment extends Model
     use GetModelByKeyName;
     use HasFactory;
     use UuidGenerator;
+    use BelongsToComapny;
 
     /**
      * @var string[]|array<int,string>

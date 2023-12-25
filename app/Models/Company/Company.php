@@ -6,6 +6,7 @@ namespace App\Models\Company;
 
 use App\Models\CRM\Client;
 use App\Models\CRM\Supplier;
+use App\Models\Finance\Payment\Payment;
 use App\Traits\GetModelByKeyName;
 use App\Traits\UuidGenerator;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -55,6 +56,13 @@ class Company extends Model
     public function estimates()
     {
         return $this->through('clients')->has('estimates');
+    }
+
+    public function payments()
+    {
+        //return $this->through('clients')->has('payments'); // tobe tested
+
+        return $this->hasMany(Payment::class);
     }
 
     // Helper Methods

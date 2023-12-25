@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Company\Company;
 use App\Models\CRM\Client;
 use App\Models\Tools\Finance\PaymentMethod;
 use App\Models\User;
@@ -16,13 +17,21 @@ return new class extends Migration
     {
         Schema::create('payments', function (Blueprint $table) {
             $table->id();
+
             $table->uuid()->nullable()->unique();
+
+            $table->foreignIdFor(Company::class)
+            ->index()
+            ->nullable()
+            ->constrained()
+            ->cascadeOnDelete();
 
             $table->foreignIdFor(PaymentMethod::class)
                 ->index()
                 ->nullable()
                 ->constrained()
                 ->nullOnDelete();
+
             $table->foreignIdFor(User::class)
                 ->index()
                 ->nullable()
@@ -35,7 +44,7 @@ return new class extends Migration
                 ->constrained()
                 ->nullOnDelete();
 
-            $table->string('document_number')->unique()->nullable();
+            $table->string('document_number')->nullable();
             $table->string('payment_reference', 255)->nullable();
             $table->date('document_date')->nullable();
             $table->date('value_date')->nullable();
