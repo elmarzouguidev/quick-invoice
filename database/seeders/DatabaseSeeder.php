@@ -14,7 +14,7 @@ class DatabaseSeeder extends Seeder
     {
         $this->call(CountrySeeder::class);
         $this->call(TaxSeeder::class);
-        
+
         $this->call(PaymentMethodSeeder::class);
 
         $this->call(CurrencySeeder::class);

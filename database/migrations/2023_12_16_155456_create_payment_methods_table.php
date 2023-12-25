@@ -17,7 +17,7 @@ return new class extends Migration
 
             $table->string('name', 50)->unique();
             $table->mediumText('description')->nullable();
-            
+
             $table->boolean('is_active')->default(true);
             $table->boolean('is_valid')->default(true);
             $table->timestamps();

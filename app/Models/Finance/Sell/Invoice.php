@@ -14,15 +14,12 @@ use App\Traits\UuidGenerator;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
-use Illuminate\Database\Eloquent\Relations\MorphOne;
-use Illuminate\Database\Eloquent\Relations\MorphTo;
 
 class Invoice extends Model
 {
+    use GetModelByKeyName;
     use HasFactory;
     use UuidGenerator;
-    use GetModelByKeyName;
-
 
     /**
      * @var string[]|array<int,string>
@@ -31,7 +28,7 @@ class Invoice extends Model
         'uuid',
 
         'is_active',
-        'is_valide'
+        'is_valide',
     ];
 
     /**
@@ -43,7 +40,6 @@ class Invoice extends Model
     ];
 
     // Relationships
-
 
     public function client()
     {

@@ -21,10 +21,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Client extends Model
 {
+    use GetModelByKeyName;
     use HasFactory;
     use UuidGenerator;
-    use GetModelByKeyName;
-
 
     /**
      * @var string[]|array<int,string>
@@ -33,7 +32,7 @@ class Client extends Model
         'uuid',
 
         'is_active',
-        'is_valide'
+        'is_valide',
     ];
 
     /**
@@ -45,7 +44,6 @@ class Client extends Model
     ];
 
     // Relationships
-
 
     public function country()
     {
@@ -86,7 +84,6 @@ class Client extends Model
     {
         return $this->hasMany(Etstimate::class);
     }
-
 
     public function payments()
     {

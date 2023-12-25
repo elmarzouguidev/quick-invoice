@@ -13,10 +13,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class City extends Model
 {
+    use GetModelByKeyName;
     use HasFactory;
     use UuidGenerator;
-    use GetModelByKeyName;
-
 
     /**
      * @var string[]|array<int,string>
@@ -25,7 +24,7 @@ class City extends Model
         'uuid',
         'country_id',
         'is_active',
-        'is_valide'
+        'is_valide',
     ];
 
     /**
@@ -37,7 +36,6 @@ class City extends Model
     ];
 
     // Relationships
-
 
     public function country()
     {

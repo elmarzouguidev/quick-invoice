@@ -9,4 +9,3 @@ class UserService
         return true;
     }
 }
-

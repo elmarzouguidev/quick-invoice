@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Company\Company;
 use App\Models\Tools\CRM\Country;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -20,6 +21,12 @@ return new class extends Migration
             $table->string('symbole', 20)->default('TVA');
 
             $table->unsignedDecimal('taux')->default(20.0)->nullable();
+
+            $table->foreignIdFor(Company::class)
+                ->index()
+                ->nullable()
+                ->constrained()
+                ->cascadeOnDelete();
 
             $table->foreignIdFor(Country::class)
                 ->index()

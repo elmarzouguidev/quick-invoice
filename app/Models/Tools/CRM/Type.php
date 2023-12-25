@@ -12,10 +12,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Type extends Model
 {
+    use GetModelByKeyName;
     use HasFactory;
     use UuidGenerator;
-    use GetModelByKeyName;
-
 
     /**
      * @var string[]|array<int,string>
@@ -25,7 +24,7 @@ class Type extends Model
         'name',
 
         'is_active',
-        'is_valide'
+        'is_valide',
     ];
 
     /**

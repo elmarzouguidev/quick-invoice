@@ -15,10 +15,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Country extends Model
 {
+    use GetModelByKeyName;
     use HasFactory;
     use UuidGenerator;
-    use GetModelByKeyName;
-
 
     /**
      * @var string[]|array<int,string>
@@ -27,7 +26,7 @@ class Country extends Model
         'uuid',
 
         'is_active',
-        'is_valide'
+        'is_valide',
     ];
 
     /**
@@ -40,12 +39,10 @@ class Country extends Model
 
     // Relationships
 
-
     public function currency()
     {
         return $this->hasOne(Currency::class);
     }
-
 
     public function taxs()
     {

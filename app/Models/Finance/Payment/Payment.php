@@ -13,10 +13,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Payment extends Model
 {
+    use GetModelByKeyName;
     use HasFactory;
     use UuidGenerator;
-    use GetModelByKeyName;
-
 
     /**
      * @var string[]|array<int,string>
@@ -25,7 +24,7 @@ class Payment extends Model
         'uuid',
 
         'is_active',
-        'is_valide'
+        'is_valide',
     ];
 
     /**
@@ -37,7 +36,6 @@ class Payment extends Model
     ];
 
     // Relationships
-
 
     public function paymentMathod()
     {

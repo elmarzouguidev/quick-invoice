@@ -12,10 +12,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class PaymentItem extends Model
 {
+    use GetModelByKeyName;
     use HasFactory;
     use UuidGenerator;
-    use GetModelByKeyName;
-
 
     /**
      * @var string[]|array<int,string>
@@ -24,7 +23,7 @@ class PaymentItem extends Model
         'uuid',
 
         'is_active',
-        'is_valide'
+        'is_valide',
     ];
 
     /**
@@ -36,7 +35,6 @@ class PaymentItem extends Model
     ];
 
     // Relationships
-
 
     public function invoice()
     {

@@ -1,9 +1,7 @@
 <?php
 
-use App\Modules\User\Controllers\{
-    UserController,
-    UpdateUserController,
-};
+use App\Modules\User\Controllers\UpdateUserController;
+use App\Modules\User\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 Route::prefix('user')

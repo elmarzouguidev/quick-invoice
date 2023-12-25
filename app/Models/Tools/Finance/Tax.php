@@ -14,10 +14,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Tax extends Model
 {
+    use GetModelByKeyName;
     use HasFactory;
     use UuidGenerator;
-    use GetModelByKeyName;
-
 
     /**
      * @var string[]|array<int,string>
@@ -29,7 +28,7 @@ class Tax extends Model
         'symbole',
 
         'is_active',
-        'is_valide'
+        'is_valide',
     ];
 
     /**
@@ -41,7 +40,6 @@ class Tax extends Model
     ];
 
     // Relationships
-
 
     public function country()
     {

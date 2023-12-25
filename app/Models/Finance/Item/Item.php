@@ -13,10 +13,9 @@ use Illuminate\Database\Eloquent\Relations\MorphTo;
 
 class Item extends Model
 {
+    use GetModelByKeyName;
     use HasFactory;
     use UuidGenerator;
-    use GetModelByKeyName;
-
 
     /**
      * @var string[]|array<int,string>
@@ -32,7 +31,7 @@ class Item extends Model
         'price_tax',
         'price_ttc',
         'options',
-        'is_valide'
+        'is_valide',
     ];
 
     /**
@@ -41,7 +40,7 @@ class Item extends Model
     protected $casts = [
         'quantity' => 'float',
         'position' => 'integer',
-        'options' => 'array'
+        'options' => 'array',
     ];
 
     // Relationships

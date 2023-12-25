@@ -42,7 +42,6 @@ return new class extends Migration
             $table->date('operation_date')->nullable();
             $table->mediumText('notes')->nullable();
 
-
             $table->boolean('is_payed')->default(true);
 
             $table->boolean('is_active')->default(true);

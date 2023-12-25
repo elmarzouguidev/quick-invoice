@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Company\Company;
 use App\Models\Tools\City;
 use App\Models\Tools\CRM\Activity;
 use App\Models\Tools\CRM\Country;
@@ -33,6 +34,12 @@ return new class extends Migration
             $table->string('fax', 100)->nullable()->unique();
 
             $table->longText('details')->nullable();
+
+            $table->foreignIdFor(Company::class)
+                ->index()
+                ->nullable()
+                ->constrained()
+                ->cascadeOnDelete();
 
             $table->foreignIdFor(Currency::class)
                 ->index()

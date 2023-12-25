@@ -14,10 +14,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Currency extends Model
 {
+    use GetModelByKeyName;
     use HasFactory;
     use UuidGenerator;
-    use GetModelByKeyName;
-
 
     /**
      * @var string[]|array<int,string>
@@ -27,7 +26,7 @@ class Currency extends Model
         'name',
         'country_id',
         'is_active',
-        'is_valide'
+        'is_valide',
     ];
 
     /**

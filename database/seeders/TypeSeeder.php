@@ -3,7 +3,6 @@
 namespace Database\Seeders;
 
 use App\Models\Tools\CRM\Type;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class TypeSeeder extends Seeder

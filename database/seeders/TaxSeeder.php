@@ -3,7 +3,6 @@
 namespace Database\Seeders;
 
 use App\Models\Tools\Finance\Tax;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class TaxSeeder extends Seeder

@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Company\Company;
 use App\Models\CRM\Client;
 use App\Models\Tools\Finance\Currency;
 use Illuminate\Database\Migrations\Migration;
@@ -16,6 +17,12 @@ return new class extends Migration
         Schema::create('etstimates', function (Blueprint $table) {
             $table->id();
             $table->uuid()->nullable()->unique();
+
+            $table->foreignIdFor(Company::class)
+                ->index()
+                ->nullable()
+                ->constrained()
+                ->cascadeOnDelete();
 
             $table->foreignIdFor(Currency::class)->index()->nullable()->constrained()->nullOnDelete();
             $table->foreignIdFor(Client::class)->index()->nullable()->constrained()->nullOnDelete();

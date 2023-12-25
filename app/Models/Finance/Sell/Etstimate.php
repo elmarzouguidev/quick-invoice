@@ -16,10 +16,9 @@ use Illuminate\Database\Eloquent\Relations\MorphMany;
 
 class Etstimate extends Model
 {
+    use GetModelByKeyName;
     use HasFactory;
     use UuidGenerator;
-    use GetModelByKeyName;
-
 
     /**
      * @var string[]|array<int,string>
@@ -28,7 +27,7 @@ class Etstimate extends Model
         'uuid',
 
         'is_active',
-        'is_valide'
+        'is_valide',
     ];
 
     /**
@@ -50,7 +49,6 @@ class Etstimate extends Model
     {
         return $this->morphMany(Price::class, 'priceable');
     }
-
 
     public function documents(): MorphMany
     {

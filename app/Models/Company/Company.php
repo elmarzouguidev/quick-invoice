@@ -2,15 +2,14 @@
 
 declare(strict_types=1);
 
-namespace App\Models\Finance\Document;
+namespace App\Models\Company;
 
 use App\Traits\GetModelByKeyName;
 use App\Traits\UuidGenerator;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\MorphTo;
 
-class Document extends Model
+class Company extends Model
 {
     use GetModelByKeyName;
     use HasFactory;
@@ -35,9 +34,6 @@ class Document extends Model
     ];
 
     // Relationships
-    public function documentable(): MorphTo
-    {
-        return $this->morphTo();
-    }
+
     // Helper Methods
 }

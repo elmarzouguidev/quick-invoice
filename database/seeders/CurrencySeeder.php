@@ -3,7 +3,6 @@
 namespace Database\Seeders;
 
 use App\Models\Tools\Finance\Currency;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class CurrencySeeder extends Seeder
@@ -21,7 +20,7 @@ class CurrencySeeder extends Seeder
                 'precision' => '2',
                 'thousand_separator' => ',',
                 'decimal_separator' => '.',
-                'country_id' => 1
+                'country_id' => 1,
             ],
             [
                 'name' => 'Euro',
@@ -31,7 +30,7 @@ class CurrencySeeder extends Seeder
                 'thousand_separator' => '.',
                 'decimal_separator' => ',',
                 'swap_currency_symbol' => true,
-                'country_id' => 2
+                'country_id' => 2,
 
             ],
             [
@@ -41,7 +40,7 @@ class CurrencySeeder extends Seeder
                 'precision' => '2',
                 'thousand_separator' => ',',
                 'decimal_separator' => '.',
-                'country_id' => 3
+                'country_id' => 3,
             ],
         ];
 

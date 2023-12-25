@@ -11,10 +11,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Category extends Model
 {
+    use GetModelByKeyName;
     use HasFactory;
     use UuidGenerator;
-    use GetModelByKeyName;
-    
 
     /**
      * @var string[]|array<int,string>
@@ -24,7 +23,7 @@ class Category extends Model
         'name',
 
         'is_active',
-        'is_valide'
+        'is_valide',
     ];
 
     /**

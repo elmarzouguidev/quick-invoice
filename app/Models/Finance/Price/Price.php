@@ -13,10 +13,9 @@ use Illuminate\Database\Eloquent\Relations\MorphTo;
 
 class Price extends Model
 {
+    use GetModelByKeyName;
     use HasFactory;
     use UuidGenerator;
-    use GetModelByKeyName;
-
 
     /**
      * @var string[]|array<int,string>
@@ -44,17 +43,15 @@ class Price extends Model
         'price_tax' => 'float',
         'price_remise' => 'float',
         'price_due' => 'float',
-        'is_valid' => 'boolean'
+        'is_valid' => 'boolean',
     ];
 
     // Relationships
-
 
     public function priceable(): MorphTo
     {
         return $this->morphTo();
     }
-
 
     // Helper Methods
 }
