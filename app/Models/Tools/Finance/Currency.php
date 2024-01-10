@@ -11,6 +11,9 @@ use App\Traits\GetModelByKeyName;
 use App\Traits\UuidGenerator;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasManyThrough;
 
 class Currency extends Model
 {
@@ -39,17 +42,17 @@ class Currency extends Model
 
     // Relationships
 
-    public function country()
+    public function country(): BelongsTo
     {
         return $this->belongsTo(Country::class);
     }
 
-    public function clients()
+    public function clients(): HasMany
     {
         return $this->hasMany(Client::class);
     }
 
-    public function payments()
+    public function payments(): HasManyThrough
     {
         return $this->hasManyThrough(Payment::class, Client::class);
     }

@@ -14,6 +14,8 @@ use App\Traits\GetModelByKeyName;
 use App\Traits\UuidGenerator;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 
 class Invoice extends Model
@@ -43,7 +45,7 @@ class Invoice extends Model
 
     // Relationships
 
-    public function client()
+    public function client(): BelongsTo
     {
         return $this->belongsTo(Client::class);
     }
@@ -63,7 +65,7 @@ class Invoice extends Model
         return $this->morphMany(Item::class, 'itemable')->orderBy('position');
     }
 
-    public function payments()
+    public function payments(): HasMany
     {
         return $this->hasMany(PaymentItem::class);
     }

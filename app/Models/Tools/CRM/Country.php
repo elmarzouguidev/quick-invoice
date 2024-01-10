@@ -12,6 +12,8 @@ use App\Traits\GetModelByKeyName;
 use App\Traits\UuidGenerator;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class Country extends Model
 {
@@ -39,22 +41,22 @@ class Country extends Model
 
     // Relationships
 
-    public function currency()
+    public function currency(): HasOne
     {
         return $this->hasOne(Currency::class);
     }
 
-    public function taxs()
+    public function taxs(): HasMany
     {
         return $this->hasMany(Tax::class);
     }
 
-    public function cities()
+    public function cities(): HasMany
     {
         return $this->hasMany(City::class);
     }
 
-    public function clients()
+    public function clients(): HasMany
     {
         return $this->hasMany(Client::class);
     }

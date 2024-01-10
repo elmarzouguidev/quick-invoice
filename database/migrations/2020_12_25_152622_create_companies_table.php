@@ -26,17 +26,17 @@ return new class extends Migration
             $table->string('code', 15)->unique()->nullable();
             $table->string('name', 200);
 
-            $table->string('rc', 70)->unique()->nullable();
-            $table->string('ice', 70)->unique()->nullable();
-            $table->string('if', 70)->unique()->nullable();
-            $table->string('cnss', 70)->unique()->nullable();
-            $table->string('patent', 70)->unique()->nullable();
+            $table->string('rc', 50)->unique()->nullable();
+            $table->string('ice', 50)->unique()->nullable();
+            $table->string('if', 50)->unique()->nullable();
+            $table->string('cnss', 50)->unique()->nullable();
+            $table->string('patent', 50)->unique()->nullable();
 
             $table->string('website', 100)->unique()->nullable();
             $table->string('email')->nullable()->unique();
-            $table->string('telephone', 100)->nullable()->unique();
-            $table->string('fix', 100)->nullable()->unique();
-            $table->string('fax', 100)->nullable()->unique();
+            $table->string('telephone', 30)->nullable()->unique();
+            $table->string('fix', 30)->nullable()->unique();
+            $table->string('fax', 30)->nullable()->unique();
 
             $table->longText('details')->nullable();
 

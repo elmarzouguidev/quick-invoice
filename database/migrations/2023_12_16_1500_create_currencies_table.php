@@ -15,12 +15,12 @@ return new class extends Migration
             $table->id();
             $table->uuid()->nullable()->unique();
 
-            $table->string('name', 80);
-            $table->string('code', 50)->nullable();
-            $table->string('symbol', 40)->nullable();
+            $table->string('name', 20);
+            $table->string('code', 20)->nullable();
+            $table->string('symbol', 5)->nullable();
             $table->integer('precision')->nullable();
-            $table->string('thousand_separator', 30)->nullable();
-            $table->string('decimal_separator', 30)->nullable();
+            $table->string('thousand_separator', 10)->nullable();
+            $table->string('decimal_separator', 10)->nullable();
             $table->boolean('swap_currency_symbol')->default(false);
 
             $table->boolean('is_active')->default(true);

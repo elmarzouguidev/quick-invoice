@@ -9,6 +9,7 @@ use App\Traits\GetModelByKeyName;
 use App\Traits\UuidGenerator;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
 
 class Item extends Model
@@ -49,7 +50,7 @@ class Item extends Model
         return $this->morphTo();
     }
 
-    public function tax()
+    public function tax(): BelongsTo
     {
         return $this->belongsTo(Tax::class);
     }

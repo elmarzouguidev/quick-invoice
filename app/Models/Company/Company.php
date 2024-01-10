@@ -8,10 +8,14 @@ use App\Enums\Company\CompanyType;
 use App\Models\CRM\Client;
 use App\Models\CRM\Supplier;
 use App\Models\Finance\Payment\Payment;
+use App\Models\User;
 use App\Traits\GetModelByKeyName;
 use App\Traits\UuidGenerator;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasManyThrough;
 
 class Company extends Model
 {
@@ -25,6 +29,7 @@ class Company extends Model
     protected $fillable = [
         'uuid',
 
+        'user_id',
         'is_active',
         'is_valide',
     ];
@@ -40,27 +45,32 @@ class Company extends Model
 
     // Relationships
 
-    public function clients()
+    public function owner(): BelongsTo
+    {
+        return $this->belongsTo(User::class, 'user_id');
+    }
+
+    public function clients(): HasMany
     {
         return $this->hasMany(Client::class);
     }
 
-    public function suppliers()
+    public function suppliers(): HasMany
     {
         return $this->hasMany(Supplier::class);
     }
 
-    public function invoices()
+    public function invoices(): HasManyThrough
     {
         return $this->through('clients')->has('invoices');
     }
 
-    public function estimates()
+    public function estimates(): HasManyThrough
     {
         return $this->through('clients')->has('estimates');
     }
 
-    public function payments()
+    public function payments(): HasMany
     {
         //return $this->through('clients')->has('payments'); // tobe tested
 

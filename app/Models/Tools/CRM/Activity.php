@@ -9,6 +9,7 @@ use App\Traits\GetModelByKeyName;
 use App\Traits\UuidGenerator;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Activity extends Model
 {
@@ -36,7 +37,7 @@ class Activity extends Model
 
     // Relationships
 
-    public function clients()
+    public function clients():HasMany
     {
         return $this->hasMany(Client::class);
     }

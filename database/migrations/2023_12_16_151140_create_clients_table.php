@@ -23,15 +23,15 @@ return new class extends Migration
             $table->uuid()->nullable()->unique();
             $table->string('name', 50);
 
-            $table->string('rc', 70)->nullable();
-            $table->string('ice', 70)->nullable();
-            $table->string('if', 70)->nullable();
-            $table->string('cnss', 70)->nullable();
+            $table->string('rc', 50)->nullable();
+            $table->string('ice', 50)->nullable();
+            $table->string('if', 50)->nullable();
+            $table->string('cnss', 50)->nullable();
 
             $table->string('website', 100)->nullable();
             $table->string('email')->nullable();
-            $table->string('telephone', 100)->nullable();
-            $table->string('fax', 100)->nullable();
+            $table->string('telephone', 30)->nullable();
+            $table->string('fax', 30)->nullable();
 
             $table->longText('details')->nullable();
 
