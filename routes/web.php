@@ -1,6 +1,6 @@
 <?php
 
-use App\Livewire\Home;
+use App\Http\Controllers\Home\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,4 +18,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/home', Home::class);
+Route::get('/home', [HomeController::class, 'index'])->name('home');
