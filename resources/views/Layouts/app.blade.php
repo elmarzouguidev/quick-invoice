@@ -24,7 +24,7 @@
     <!-- App Css-->
     <link href="{{ asset('assets/css/app.min.css') }}" id="app-style" rel="stylesheet" />
 
-    {{ $styles ?? '' }}
+    @stack('styles')
 
 </head>
 
@@ -45,7 +45,7 @@
 
             <div class="page-content">
 
-                {{ $slot }}
+                @yield('content')
 
             </div>
 
@@ -57,24 +57,24 @@
 
     </div>
 
-    {{--<x-layouts.parts.rightbar />--}}
 
+     @include('components.layouts.parts.rightbar')
 
     <!-- Right bar overlay-->
-    <div class="rightbar-overlay"></div>
+
 
     <!-- JAVASCRIPT -->
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="{{ asset('assets/libs/jquery/jquery.slim.min.js') }}"></script>
     <script src="{{ asset('assets/libs/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
     <script src="{{ asset('assets/libs/metismenu/metisMenu.min.js') }}"></script>
     <script src="{{ asset('assets/libs/simplebar/simplebar.min.js') }}"></script>
     <script src="{{ asset('assets/libs/node-waves/waves.min.js') }}"></script>
 
     <!-- App js -->
-    <script src="{{ asset('assets/js/app.js') }}?ver={{rand(12,650)}}"></script>
+    <script src="{{ asset('assets/js/app.js') }}"></script>
 
 
-    {{ $scripts ?? '' }}
+    @stack('scripts')
 
 </body>
 
