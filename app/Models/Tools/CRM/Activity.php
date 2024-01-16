@@ -37,7 +37,7 @@ class Activity extends Model
 
     // Relationships
 
-    public function clients():HasMany
+    public function clients(): HasMany
     {
         return $this->hasMany(Client::class);
     }
