@@ -6,7 +6,7 @@
         </x-menu.item>
 
         <x-menu.item>
-            <a href="{{ route('home') }}" class="waves-effect">
+            <a href="{{ route('home') }}" wire:navigate class="waves-effect">
                 <i class="bx bx-calendar"></i>
                 <span key="t-{{ route('home') }}">Calendar</span>
             </a>

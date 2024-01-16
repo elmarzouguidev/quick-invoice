@@ -4,13 +4,16 @@
         Quick Invoice Dashboard
     </x-slot>
 
-    <x-messages.alert>
-        <strong>Whoops!</strong> Something went wrong!
-    </x-messages.alert>
+
 
     <div class="container-fluid">
 
-        <x-layouts.parts.breadcrumb title="Quick Invoice Dashboard" />
+        <x-layouts.parts.breadcrumb title="Dashboard" />
+
+        <x-messages.alert>
+            <strong>Whoops!</strong> Something went wrong!
+        </x-messages.alert>
+
 
         @include('Home.section_a_welcom')
 
