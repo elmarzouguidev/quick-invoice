@@ -10,6 +10,7 @@
     <meta name="googlebot" content="noindex, nofollow" />
     <meta name="google" content="notranslate" />
     <meta content="app_creator" name="Elmarzougui Abdelghafour" />
+    <meta content="app_name" name="Quick Invoice" />
     <meta content="app_version" name="1.1" />
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
@@ -23,13 +24,16 @@
     <!-- App Css-->
     <link href="{{ asset('assets/css/app.min.css') }}" id="app-style" rel="stylesheet" type="text/css" />
 
+    {{ $styles ?? '' }}
+
 </head>
 
 <body data-sidebar="dark">
 
     <!-- <body data-layout="horizontal" data-topbar="dark"> -->
 
-    <!-- Begin page -->
+    <x-layouts.parts.loader />
+    
     <div id="layout-wrapper">
 
 
@@ -66,14 +70,14 @@
     <script src="{{ asset('assets/libs/simplebar/simplebar.min.js') }}"></script>
     <script src="{{ asset('assets/libs/node-waves/waves.min.js') }}"></script>
 
-    <!-- apexcharts -->
-    <script src="{{ asset('assets/libs/apexcharts/apexcharts.min.js') }}"></script>
 
-    <!-- dashboard init -->
-    <script src="{{ asset('assets/js/pages/dashboard.init.js') }}"></script>
 
     <!-- App js -->
     <script src="{{ asset('assets/js/app.js') }}"></script>
+
+
+    {{ $scripts ?? '' }}
+
 </body>
 
 </html>
