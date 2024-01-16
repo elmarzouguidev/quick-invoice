@@ -50,5 +50,5 @@
 
         </div>
 
-    </div> <!-- end slimscroll-menu-->
+    </div>
 </div>

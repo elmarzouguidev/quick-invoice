@@ -1,18 +1,18 @@
 <div id="sidebar-menu">
     <ul class="metismenu list-unstyled" id="side-menu">
 
-        <x-Menu.item class="menu-title" key="t-menu">
+        <x-menu.item class="menu-title" key="t-menu">
             Menu
-        </x-Menu.item>
+        </x-menu.item>
 
-        <x-Menu.item>
+        <x-menu.item>
             <a href="{{ route('home') }}" class="waves-effect">
                 <i class="bx bx-calendar"></i>
                 <span key="t-{{ route('home') }}">Calendar</span>
             </a>
-        </x-Menu.item>
+        </x-menu.item>
 
-        <x-Menu.item>
+        <x-menu.item>
 
             <a href="javascript: void(0);" class="has-arrow waves-effect">
                 <i class="bx bxs-group"></i>
@@ -27,6 +27,6 @@
                 </li>
             </ul>
 
-        </x-Menu.item>
+        </x-menu.item>
     </ul>
 </div>
