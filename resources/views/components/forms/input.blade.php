@@ -4,7 +4,7 @@
     'id',
     'value',
 ])
-<input type="{{ $type }}" name="{{ $name }}" id="{{ $name }}" value="{{ $value }}"
+<input type="{{ $type }}" name="{{ $name }}" id="{{ $id }}" value="{{ $value }}"
     autocomplete="off"
     {{ $attributes->class(['form-control rounded border-light bg-light', 'is-invalid' => $errors->has($name)]) }}>
 @error($name)
