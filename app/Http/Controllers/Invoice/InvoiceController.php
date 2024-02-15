@@ -14,7 +14,7 @@ class InvoiceController extends Controller
     public function __invoke(Request $request)
     {
         $invoices = Invoice::all();
-        
+
         return view('Invoice.index', compact('invoices'));
     }
 }

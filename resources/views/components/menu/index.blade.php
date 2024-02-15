@@ -26,12 +26,19 @@
                 <span key="t-Contacts">Contacts</span>
             </a>
             <ul class="sub-menu" aria-expanded="false">
-                <li>
-                    <a href="/abdo" key="t-prospects">
+
+                <x-menu.item>
+                    <a href="/abdo" key="t-Prospects">
                         <i class="bx bx-user"></i>
                         {{ __('Prospects') }}
                     </a>
-                </li>
+                </x-menu.item>
+                <x-menu.item>
+                    <a href="/abdod" key="t-Fournisseurs">
+                        <i class="bx bx-user"></i>
+                        {{ __('Fournisseurs') }}
+                    </a>
+                </x-menu.item>
             </ul>
 
         </x-menu.item>
