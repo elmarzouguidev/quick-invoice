@@ -4,12 +4,17 @@ declare(strict_types=1);
 
 namespace App\Models\CRM;
 
+use App\Models\Tools\City;
+use App\Models\Tools\CRM\Country;
+use App\Models\Tools\Finance\Currency;
+use App\Models\Tools\Finance\Tax;
 use App\Models\Tools\Traits\hasAddresses;
 use App\Models\Traits\BelongsToComapny;
 use App\Traits\GetModelByKeyName;
 use App\Traits\UuidGenerator;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Supplier extends Model
 {
@@ -39,5 +44,24 @@ class Supplier extends Model
 
     // Relationships
 
+    public function country(): BelongsTo
+    {
+        return $this->belongsTo(Country::class);
+    }
+
+    public function city(): BelongsTo
+    {
+        return $this->belongsTo(City::class);
+    }
+
+    public function tax(): BelongsTo
+    {
+        return $this->belongsTo(Tax::class);
+    }
+
+    public function currency(): BelongsTo
+    {
+        return $this->belongsTo(Currency::class);
+    }
     // Helper Methods
 }
