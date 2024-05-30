@@ -4,8 +4,6 @@
         Quick Invoice Dashboard
     </x-slot>
 
-
-
     <div class="container-fluid">
 
         <x-layouts.parts.breadcrumb title="Dashboard" />
