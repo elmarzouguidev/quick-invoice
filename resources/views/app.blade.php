@@ -17,15 +17,6 @@
     <!-- App favicon -->
     <link rel="shortcut icon" href="{{ asset('assets/images/favicon.ico') }}">
 
-    <!-- Bootstrap Css -->
-    <link href="{{ asset('assets/css/bootstrap.min.css') }}" id="bootstrap-style" rel="stylesheet" />
-    <!-- Icons Css -->
-    <link href="{{ asset('assets/css/icons.min.css') }}" rel="stylesheet" />
-    <!-- App Css-->
-    <link href="{{ asset('assets/css/app.min.css') }}" id="app-style" rel="stylesheet" />
-
-    @stack('styles')
-
     @viteReactRefresh
     @vite('resources/js/app.jsx')
 
@@ -59,25 +50,6 @@
 
 
     </div>
-
-
-    @include('components.layouts.parts.rightbar')
-
-    <!-- Right bar overlay-->
-
-
-    <!-- JAVASCRIPT -->
-    <script src="{{ asset('assets/libs/jquery/jquery.slim.min.js') }}"></script>
-    <script src="{{ asset('assets/libs/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-    <script src="{{ asset('assets/libs/metismenu/metisMenu.min.js') }}"></script>
-    <script src="{{ asset('assets/libs/simplebar/simplebar.min.js') }}"></script>
-    <script src="{{ asset('assets/libs/node-waves/waves.min.js') }}"></script>
-
-    <!-- App js -->
-    <script src="{{ asset('assets/js/app.js') }}"></script>
-
-
-    @stack('scripts')
 
 </body>
 
