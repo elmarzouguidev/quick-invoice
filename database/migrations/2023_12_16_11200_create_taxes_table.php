@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('name', 20)->unique()->default('TVA MAROC');
             $table->string('symbole', 20)->default('TVA');
 
-            $table->unsignedDecimal('taux')->default(20.0)->nullable();
+            $table->float('taux')->default(20.0)->nullable();
 
             $table->foreignIdFor(Company::class)
                 ->index()
