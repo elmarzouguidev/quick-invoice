@@ -1,6 +1,5 @@
 <?php
 
-use App\Models\Company\Company;
 use App\Models\Tools\CRM\Country;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -17,22 +16,16 @@ return new class extends Migration
             $table->id();
             $table->uuid()->nullable()->unique();
 
-            $table->string('name', 20)->unique()->default('TVA MAROC');
-            $table->string('symbole', 20)->default('TVA');
-
-            $table->float('taux')->default(20.0)->nullable();
-
-            $table->foreignIdFor(Company::class)
-                ->index()
-                ->nullable()
-                ->constrained()
-                ->cascadeOnDelete();
-
             $table->foreignIdFor(Country::class)
                 ->index()
                 ->nullable()
                 ->constrained()
                 ->nullOnDelete();
+
+            $table->string('name', 30);
+            $table->string('symbole', 30)->nullable();
+
+            $table->float('taux')->default(00.0)->nullable();
 
             $table->boolean('is_active')->default(true);
             $table->boolean('is_valid')->default(true);

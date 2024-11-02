@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Enums\Company\CompanyType;
 use App\Models\Tools\CRM\Type;
 use Illuminate\Database\Seeder;
 
@@ -12,13 +13,9 @@ class TypeSeeder extends Seeder
      */
     public function run(): void
     {
-        $types = [
-            ['name' => 'Particulier'],
-            ['name' => 'Entreprise'],
-        ];
 
-        foreach ($types as $type) {
-            Type::create($type);
+        foreach (CompanyType::cases() as $type) {
+            Type::create(['name' => $type->getName()]);
         }
     }
 }
