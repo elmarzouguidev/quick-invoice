@@ -23,9 +23,8 @@ return new class extends Migration
                 ->nullOnDelete();
 
             $table->string('name', 30);
-            $table->string('symbole', 30)->nullable();
-
             $table->float('taux')->default(00.0)->nullable();
+            $table->string('symbole', 30)->nullable();
 
             $table->boolean('is_active')->default(true);
             $table->boolean('is_valid')->default(true);
