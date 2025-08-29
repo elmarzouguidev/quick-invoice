@@ -2,7 +2,7 @@
 
 namespace App\Status\Document;
 
-use App\Models\Finance\BaseDocument;
+use App\Models\Finance\BaseDocument\BaseDocument;
 
 abstract class DocumentStatus
 {

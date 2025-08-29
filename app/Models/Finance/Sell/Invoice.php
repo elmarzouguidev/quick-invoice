@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Models\Finance\Sell;
 
 use App\Models\CRM\Client;
+use App\Models\Finance\BaseDocument\BaseDocument;
 use App\Models\Finance\Document\Document;
 use App\Models\Finance\Item\Item;
 use App\Models\Finance\Payment\PaymentItem;
@@ -13,12 +14,11 @@ use App\Models\Traits\BelongsToComapny;
 use App\Traits\GetModelByKeyName;
 use App\Traits\UuidGenerator;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 
-class Invoice extends Model
+class Invoice extends BaseDocument
 {
     use BelongsToComapny;
     use GetModelByKeyName;

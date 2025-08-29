@@ -14,10 +14,10 @@ class PaymentMethodSeeder extends Seeder
     {
         $methods = [
 
+            ['name' => 'Virement bancaire'],
             ['name' => 'Espèces'],
             ['name' => 'Chèque'],
             ['name' => 'Prélèvement'],
-            ['name' => 'Virement bancaire'],
             ['name' => 'Cart bancaire'],
             ['name' => 'Lettre de change'],
         ];

@@ -14,19 +14,20 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('etstimates', function (Blueprint $table) {
+        Schema::create('estimates', function (Blueprint $table) {
             $table->id();
             $table->uuid()->nullable()->unique();
 
             $table->foreignIdFor(Company::class)
                 ->index()
-                ->nullable()
                 ->constrained()
                 ->cascadeOnDelete();
 
             $table->foreignIdFor(Currency::class)->index()->nullable()->constrained()->nullOnDelete();
             $table->foreignIdFor(Client::class)->index()->nullable()->constrained()->nullOnDelete();
 
+            $table->string('state')->nullable();
+            
             $table->string('document_number')->nullable();
 
             $table->date('document_date')->nullable();

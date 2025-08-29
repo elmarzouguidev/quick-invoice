@@ -35,6 +35,8 @@ return new class extends Migration
 
             $table->longText('details')->nullable();
 
+            $table->string('state')->nullable();
+
             $table->foreignIdFor(Company::class)
                 ->index()
                 ->nullable()

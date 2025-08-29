@@ -22,7 +22,6 @@ return new class extends Migration
 
             $table->foreignIdFor(Company::class)
                 ->index()
-                ->nullable()
                 ->constrained()
                 ->cascadeOnDelete();
 
@@ -32,6 +31,7 @@ return new class extends Migration
             $table->string('document_number')->nullable();
 
             $table->unsignedInteger('status')->default(DocumentStatuses::DRAFT->value);
+            $table->string('state')->nullable();
 
             $table->date('document_date')->nullable();
             $table->date('due_date')->nullable();

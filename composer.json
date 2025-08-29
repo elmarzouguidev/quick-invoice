@@ -12,6 +12,7 @@
         "laravel/pennant": "^1.11",
         "laravel/sanctum": "^4.0",
         "laravel/tinker": "^2.8",
+        "spatie/laravel-model-states": "*",
         "spatie/laravel-permission": "^6.3"
     },
     "require-dev": {

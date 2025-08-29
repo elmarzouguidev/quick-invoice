@@ -28,7 +28,7 @@ return new class extends Migration
 
             $table->longText('designation')->nullable();
             $table->longText('description')->nullable();
-            $table->json('options')->nullable();
+
 
             $table->float('quantity')->default(0)->nullable();
 
@@ -37,6 +37,8 @@ return new class extends Migration
             $table->decimal('price_remise', 13, 2)->default(0);
             $table->decimal('price_tax', 13, 2)->default(0);
             $table->decimal('price_ttc', 13, 2)->default(0);
+
+            $table->json('options')->nullable();
 
             $table->timestamps();
         });

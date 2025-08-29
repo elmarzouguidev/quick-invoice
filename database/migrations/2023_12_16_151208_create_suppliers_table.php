@@ -34,10 +34,10 @@ return new class extends Migration
             $table->string('fax', 30)->nullable();
 
             $table->longText('details')->nullable();
-
+            $table->string('state')->nullable();
+            
             $table->foreignIdFor(Company::class)
                 ->index()
-                ->nullable()
                 ->constrained()
                 ->cascadeOnDelete();
 

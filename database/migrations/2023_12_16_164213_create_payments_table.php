@@ -22,7 +22,6 @@ return new class extends Migration
 
             $table->foreignIdFor(Company::class)
                 ->index()
-                ->nullable()
                 ->constrained()
                 ->cascadeOnDelete();
 

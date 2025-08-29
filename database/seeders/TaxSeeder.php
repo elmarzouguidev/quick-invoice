@@ -13,8 +13,8 @@ class TaxSeeder extends Seeder
     public function run(): void
     {
         $taxes = [
-            ['name' => 'TVA', 'taux' => 20.00, 'symbole' => '20%', 'country_id' => 1],
-            ['name' => 'TVA', 'taux' => 14.00, 'symbole' => '14%', 'country_id' => 1],
+            ['name' => 'TVA', 'taux' => 20, 'symbole' => '20%', 'country_id' => 1],
+            ['name' => 'TVA', 'taux' => 14, 'symbole' => '14%', 'country_id' => 1],
         ];
 
         foreach ($taxes as $taxe) {

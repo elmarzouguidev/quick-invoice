@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('documents', function (Blueprint $table) {
             $table->id();
             $table->uuid()->nullable()->unique();
-
+            $table->string('state')->nullable();
             $table->morphs('documentable');
             $table->string('code', 100)->nullable();
 

@@ -16,7 +16,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 
-class Etstimate extends Model
+class Estimate extends Model
 {
     use BelongsToComapny;
     use GetModelByKeyName;

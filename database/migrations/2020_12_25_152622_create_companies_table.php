@@ -18,8 +18,11 @@ return new class extends Migration
             $table->id();
             $table->uuid()->nullable()->unique();
 
-            $table->foreignIdFor(User::class)->index()->nullable()->constrained();
+            $table->foreignIdFor(User::class)->index()->constrained();
+
             $table->uuid('user_uuid')->nullable();
+            
+            $table->string('state')->nullable();
 
             $table->enum('type', array_column(CompanyType::cases(), 'value'));
 

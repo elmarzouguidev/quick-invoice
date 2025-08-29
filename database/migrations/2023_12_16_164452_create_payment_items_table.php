@@ -19,9 +19,8 @@ return new class extends Migration
 
             $table->foreignIdFor(Payment::class)
                 ->index()
-                ->nullable()
                 ->constrained()
-                ->nullOnDelete();
+                ->cascadeOnDelete();
 
             $table->foreignIdFor(Invoice::class)
                 ->index()
