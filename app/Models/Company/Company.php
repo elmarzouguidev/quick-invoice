@@ -45,6 +45,12 @@ class Company extends Model
 
     // Relationships
 
+
+    public function group(): BelongsTo
+    {
+        return $this->belongsTo(CompanyGroup::class, 'company_group_id');
+    }
+
     public function owner(): BelongsTo
     {
         return $this->belongsTo(User::class, 'user_id');

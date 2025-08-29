@@ -1,6 +1,7 @@
 <?php
 
 use App\Enums\Company\CompanyType;
+use App\Models\Company\CompanyGroup;
 use App\Models\User;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -16,15 +17,16 @@ return new class extends Migration
         Schema::create('companies', function (Blueprint $table) {
 
             $table->id();
-            $table->uuid()->nullable()->unique();
+            $table->uuid()->nullable();
+
+            $table->foreignIdFor(CompanyGroup::class)->index()->nullable()->constrained()->nullOnDelete();
 
             $table->foreignIdFor(User::class)->index()->constrained();
 
             $table->uuid('user_uuid')->nullable();
-            
-            $table->string('state')->nullable();
 
             $table->enum('type', array_column(CompanyType::cases(), 'value'));
+            $table->string('state')->nullable();
 
             $table->string('code', 15)->unique()->nullable();
             $table->string('name', 200);
