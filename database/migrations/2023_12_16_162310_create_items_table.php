@@ -29,7 +29,6 @@ return new class extends Migration
             $table->longText('designation')->nullable();
             $table->longText('description')->nullable();
 
-
             $table->float('quantity')->default(0)->nullable();
 
             $table->decimal('price_unit', 13, 2)->default(0);

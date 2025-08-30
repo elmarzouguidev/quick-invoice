@@ -26,6 +26,6 @@ class ExtentionCast implements CastsAttributes
      */
     public function set(Model $model, string $key, $value, array $attributes)
     {
-        //return json_encode($value);
+        // return json_encode($value);
     }
 }

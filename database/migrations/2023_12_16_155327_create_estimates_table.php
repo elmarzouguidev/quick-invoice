@@ -27,7 +27,7 @@ return new class extends Migration
             $table->foreignIdFor(Client::class)->index()->nullable()->constrained()->nullOnDelete();
 
             $table->string('state')->nullable();
-            
+
             $table->string('document_number')->nullable();
 
             $table->date('document_date')->nullable();

@@ -97,7 +97,7 @@ class Client extends Model
 
     public function paymentsItems()
     {
-        //return $this->hasManyThrough(PaymentItem::class, Payment::class);
+        // return $this->hasManyThrough(PaymentItem::class, Payment::class);
 
         return $this->through('payments')->has('items');
     }

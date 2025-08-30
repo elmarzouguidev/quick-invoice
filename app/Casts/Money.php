@@ -19,11 +19,7 @@ class Money implements CastsAttributes
         $this->currency = $currency;
     }
 
-    public function get($model, string $key, $value, array $attributes)
-    {
-    }
+    public function get($model, string $key, $value, array $attributes) {}
 
-    public function set($model, string $key, $value, array $attributes)
-    {
-    }
+    public function set($model, string $key, $value, array $attributes) {}
 }

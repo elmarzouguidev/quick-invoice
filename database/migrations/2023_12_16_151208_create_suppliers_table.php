@@ -21,7 +21,7 @@ return new class extends Migration
         Schema::create('suppliers', function (Blueprint $table) {
             $table->id();
             $table->uuid()->nullable()->unique();
-            $table->string('name', 50);
+            $table->string('name', 100);
 
             $table->string('rc', 50)->nullable();
             $table->string('ice', 50)->nullable();
@@ -35,7 +35,7 @@ return new class extends Migration
 
             $table->longText('details')->nullable();
             $table->string('state')->nullable();
-            
+
             $table->foreignIdFor(Company::class)
                 ->index()
                 ->constrained()

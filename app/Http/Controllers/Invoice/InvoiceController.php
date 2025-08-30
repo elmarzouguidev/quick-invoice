@@ -23,7 +23,7 @@ class InvoiceController extends Controller
     public function __invoke(User $user)
     {
         return Inertia::render('User/Show', [
-            'user' => $user
+            'user' => $user,
         ]);
     }
 }

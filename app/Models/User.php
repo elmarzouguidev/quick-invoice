@@ -5,6 +5,7 @@ namespace App\Models;
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 
 use App\Models\Company\Company;
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -21,9 +22,15 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
+        'uuid',
+        'nom',
+        'prenom',
         'email',
+        'telephone',
+        'username',
         'password',
+        'is_active',
+        'is_valid',
     ];
 
     /**
@@ -49,5 +56,12 @@ class User extends Authenticatable
     public function company(): HasOne
     {
         return $this->hasOne(Company::class);
+    }
+
+    protected function fullName(): Attribute
+    {
+        return new Attribute(
+            fn() => $this->nom . ' ' . $this->prenom,
+        );
     }
 }

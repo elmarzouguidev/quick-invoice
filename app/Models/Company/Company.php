@@ -45,7 +45,6 @@ class Company extends Model
 
     // Relationships
 
-
     public function group(): BelongsTo
     {
         return $this->belongsTo(CompanyGroup::class, 'company_group_id');
@@ -78,7 +77,7 @@ class Company extends Model
 
     public function payments(): HasMany
     {
-        //return $this->through('clients')->has('payments'); // tobe tested
+        // return $this->through('clients')->has('payments'); // tobe tested
 
         return $this->hasMany(Payment::class);
     }

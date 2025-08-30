@@ -6,9 +6,7 @@ use App\Models\Finance\BaseDocument\BaseDocument;
 
 abstract class DocumentStatus
 {
-    public function __construct(protected BaseDocument $document)
-    {
-    }
+    public function __construct(protected BaseDocument $document) {}
 
     abstract public function canBeChanged(): bool;
 }
